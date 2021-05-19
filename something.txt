@@ -1,0 +1,86 @@
+using System;
+class MainClass {
+
+class Hero{
+public string name = "Hero Class";
+public string desc = "Basic Desc";
+private int prilevel;
+
+public int pubLevel {
+
+get 
+  {
+    return prilevel;
+  } 
+
+set
+  {
+    prilevel = value;
+  }
+
+}
+
+
+public virtual void HeroSound() 
+{
+Console.WriteLine("\nThe Hero makes a sound");
+}
+}
+
+class Rouge : Hero{
+public int size;
+
+public override void HeroSound()
+{
+Console.WriteLine("\nThe Rouge says: Lets get ready to win this");
+}
+}
+
+class Tank : Hero{
+public int Strength;
+
+public override void HeroSound()
+{
+Console.WriteLine("\nThe Tank says: Firing!");
+}
+
+}
+
+public static void Main (string[] args) {
+
+
+Hero Brian = new Hero();
+Console.WriteLine(Brian.name);
+Brian.desc = "Brian likes Garry Barlow";
+Console.WriteLine(Brian.desc);
+Brian.pubLevel = 503;
+Console.WriteLine("Brians level is: " + Brian.pubLevel);
+
+Console.WriteLine("\n ---------------------------------- \n");
+
+Rouge Garfield = new Rouge();
+Garfield.name = "Cat";
+Console.WriteLine(Garfield.name);
+Garfield.desc = "Garfield is a cat and he is very fat because he loves lasania ";
+Console.WriteLine("Info: " + Garfield.desc);
+Garfield.pubLevel = 26;
+Console.WriteLine("Garfield level is: " + Garfield.pubLevel);
+
+Console.WriteLine("\n ---------------------------------- \n");
+
+Tank Tom = new Tank();
+Tom.name = "Tom";
+Console.WriteLine(Tom.name);
+Tom.desc = "Tom is an idiot";
+Console.WriteLine("Info: " + Tom.desc);
+Tom.pubLevel = 15;
+Console.WriteLine("Toms level is: " + Tom.pubLevel);
+Tom.Strength = 6;
+Console.WriteLine("Toms strength level is: " + Tom.Strength);
+
+Brian.HeroSound();
+Garfield.HeroSound();
+Tom.HeroSound();
+}
+
+}
